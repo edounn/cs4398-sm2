@@ -3,6 +3,7 @@ import java.util.*;
 import java.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.imageio.ImageIO;
 import Shape;
 
 /**
@@ -11,13 +12,16 @@ import Shape;
 public class Board{
 
   private final int BOARD_WIDTH = 10;
-  private final int BOARD_HEIGHT = 22;
-  private final int PERIOD_INTERVAL = 300;
+  private final int BOARD_HEIGHT = 20;
+  private final int BLOCK_SIZE = 30;
 
+  private int[][] board;
   private Timer timer; //Timer for game
   private BufferedImage blocks;
   private Shape[] shapes;
-
+  private Shape currentPiece;
+  private boolean gameOver;
+  private boolean isPaused;
 
 
 
@@ -25,6 +29,11 @@ public class Board{
    * Default constructor
    */
   public Board() {
+    board = int[BOARD_HEIGHT][BOARD_WIDTH];
+    shapes = Shape[7];
+    gameOver = false;
+    isPaused = false;
+
     try {
       blocks = ImageIO.read(Board.class.getResource("/tiles.png"));
     }catch (IOException e) {
@@ -52,7 +61,7 @@ public class Board{
   * Takes no parameters, returns nothing.
   */
   public void Start(){
-    Timer
+
   }
 
   /**
