@@ -21,7 +21,7 @@ public class ShapeTest {
     public void init(){
         try {
             board = new Board();
-            blocks = ImageIO.read(Board.class.getResource("/Model/tiles.jpg"));
+            blocks = ImageIO.read(Board.class.getResource("/images/tiles.jpg"));
         }catch(Exception e){System.out.println("Error");}
     }
 

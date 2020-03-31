@@ -29,12 +29,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hello\Documents\GitHub\cs4398-sm2\src\images" />
+      <recent name="C:\Users\Hello\Documents\GitHub\cs4398-sm2\src" />
       <recent name="C:\Users\Hello\Documents\GitHub\cs4398-sm2\src\Model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Test Shape">
+  <component name="RunManager" selected="Application.Run">
     <configuration name="Run" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="View.Main" />
       <module name="cs4398-sm2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -84,30 +86,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585693838358">
+    <state x="223" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585694761905">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state x="223" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1536.824@0.40.1536.824" timestamp="1585693838358" />
-    <state x="498" y="236" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585693834800">
+    <state x="223" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1536.824@0.40.1536.824" timestamp="1585694761905" />
+    <state x="498" y="236" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585694758037">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state x="498" y="236" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1536.824@0.40.1536.824" timestamp="1585693834800" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1585694051779">
+    <state x="498" y="236" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1536.824@0.40.1536.824" timestamp="1585694758037" />
+    <state width="1493" height="239" key="GridCell.Tab.0.bottom" timestamp="1585694624948">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1585694051779" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1585694051779">
+    <state width="1493" height="239" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1585694624948" />
+    <state width="1493" height="239" key="GridCell.Tab.0.center" timestamp="1585694624947">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1585694051779" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1585694051777">
+    <state width="1493" height="239" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1585694624947" />
+    <state width="1493" height="239" key="GridCell.Tab.0.left" timestamp="1585694624947">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1585694051777" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1585694051779">
+    <state width="1493" height="239" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1585694624947" />
+    <state width="1493" height="239" key="GridCell.Tab.0.right" timestamp="1585694624947">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1585694051779" />
+    <state width="1493" height="239" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1585694624947" />
     <state x="277" y="95" key="SettingsEditor" timestamp="1585692436074">
       <screen x="0" y="40" width="1536" height="824" />
     </state>

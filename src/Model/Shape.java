@@ -110,8 +110,8 @@ public class Shape {
   /**
    *
    */
-  public BufferedImage getBlock() {
-      return block;
+  public Shape getBlock() {
+      return this;
   }
 
   /**

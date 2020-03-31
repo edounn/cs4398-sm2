@@ -1,13 +1,9 @@
+package View;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.image.BufferStrategy;
-import java.io.File;
-import java.nio.Buffer;
 import javax.swing.*;
 import Model.Board;
 
@@ -61,7 +57,7 @@ public class Menu extends JPanel {
 
         super.paintComponent(g);
         if (!started) {
-            g.drawImage(new ImageIcon("src/Tetris.jpg").getImage(), 0, 0, 720, 640, this);
+            g.drawImage(new ImageIcon("/images/Tetris.jpg").getImage(), 0, 0, 720, 640, this);
         } else {
             setBackground(Color.RED);
         }

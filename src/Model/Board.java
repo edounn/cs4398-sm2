@@ -43,7 +43,7 @@ public class Board  extends JPanel{
 		});
 
     try {
-      blocks = ImageIO.read(Board.class.getResource("./tiles.jpg"));
+      blocks = ImageIO.read(Board.class.getResource("/images/tiles.jpg"));
     }catch (IOException e) {
       e.printStackTrace();
     }
