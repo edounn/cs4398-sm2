@@ -12,6 +12,7 @@ import javax.swing.*;
 
 public class Menu extends JPanel {
     public boolean started = false;
+    public Board game = new Board();
 
     public String[] args;
 
@@ -44,6 +45,7 @@ public class Menu extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // create instance to play tetris
+                  game.Start();
             }
         });
         add(playbutton);

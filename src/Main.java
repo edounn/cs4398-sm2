@@ -11,7 +11,6 @@ public class Main extends JFrame {
         String[] path = arg;
         Menu menu = new Menu(path);
         add(menu);
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
