@@ -9,6 +9,7 @@ import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.nio.Buffer;
 import javax.swing.*;
+import Model.Board;
 
 public class Menu extends JPanel {
     public boolean started = false;
@@ -45,12 +46,16 @@ public class Menu extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // create instance to play tetris
-                  game.Start();
+                  startGame();
             }
         });
         add(playbutton);
 }
 
+    public void startGame(){
+        System.out.println("start!");
+        game.Start();
+    }
     @Override
     public void paintComponent (Graphics g) {
 

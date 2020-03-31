@@ -1,5 +1,5 @@
+package Model;
 
-import java.util.*;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.awt.event.*;

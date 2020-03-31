@@ -1,3 +1,5 @@
+package Model;
+
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 
@@ -108,8 +110,8 @@ public class Shape {
   /**
    *
    */
-  public void getBlock() {
-      // TODO implement here
+  public BufferedImage getBlock() {
+      return block;
   }
 
   /**
