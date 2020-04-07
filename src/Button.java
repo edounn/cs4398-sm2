@@ -89,23 +89,17 @@ public class Button extends JButton implements MouseListener {
 
         }
 
-
-
         public void setButtonText (String text) {
 
             this.text = text;
 
         }
 
-
-
         public String getButtonText() {
 
             return text;
 
         }
-
-
 
         @Override
 
