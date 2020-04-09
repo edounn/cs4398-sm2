@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import View.Menu;
 
 public class Main extends JFrame {
     public Main(String[] arg) {

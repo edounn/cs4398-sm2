@@ -59,6 +59,9 @@ public class Board  extends JPanel{
   public boolean getIsPaused(){
     return isPaused;
   }
+  public int[][] getBoard(){
+      return board;
+  }
 
   /**
   * Private function which clears the board by setting array index to null.

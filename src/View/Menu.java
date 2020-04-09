@@ -15,8 +15,8 @@ import Model.Board;
 
 public class Menu extends JPanel {
     public boolean started = false;
-    public String filename = "src/Tetris.jpg";
-    public Board game = new Board();
+    public String filename = "./Tetris.jpg";
+    public Board game;
     public String[] args;
 
 
@@ -24,7 +24,7 @@ public class Menu extends JPanel {
     public Menu(String[] arg) {
         args = arg;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
+        game = new Board();
         mainMenu();
     }
 
@@ -101,7 +101,7 @@ public class Menu extends JPanel {
         theme1Button.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                filename = "src/Tetris.jpg";
+                filename = "./Tetris.jpg";
             }
         });
         add(theme1Button);
@@ -113,7 +113,7 @@ public class Menu extends JPanel {
         theme2Button.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                filename = "src/Tetris1.jpg";
+                filename = "./Tetris1.jpg";
             }
         });
         add(theme2Button);
@@ -125,7 +125,7 @@ public class Menu extends JPanel {
         theme3Button.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                filename = "src/Tetris2.jpg";
+                filename = "./Tetris2.jpg";
             }
         });
         add(theme3Button);
@@ -147,6 +147,7 @@ public class Menu extends JPanel {
 
     public void startGame(){
         System.out.println("start!");
+        started = true;
         game.Start();
     }
 

@@ -9,7 +9,7 @@ import Model.Board;
 public class BoardTest{
 
   private Board board = new Board();
-  
+
   @Test
   public void testStart(){
     board.Start();
