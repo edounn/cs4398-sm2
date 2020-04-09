@@ -41,26 +41,6 @@ public class Board  extends JPanel{
 				repaint();
 			}
 		});
-
-    try {
-      blocks = ImageIO.read(Board.class.getResource("/images/tiles.jpg"));
-    }catch (IOException e) {
-      e.printStackTrace();
-    }
-
-    shapes[0] = new Shape(blocks.getSubimage(0, 0, BLOCK_SIZE, BLOCK_SIZE), new int[][]{
-  	   {1, 1, 1, 1} // LBlock
-    }, this);
-
-    shapes[1] = new Shape(blocks.getSubimage(0, 0, BLOCK_SIZE, BLOCK_SIZE), new int[][]{
-      {1, 1, 0}, // ZBlock
-  	  {0, 1, 1}
-    }, this);
-
-    shapes[2] = new Shape(blocks.getSubimage(0, 0, BLOCK_SIZE, BLOCK_SIZE), new int[][]{
-  	   {0, 1, 1}, // SBlock
-	     {1, 1, 0}
-    }, this);
   }
 
 
