@@ -1,3 +1,5 @@
+package View;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -9,10 +11,12 @@ import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.nio.Buffer;
 import javax.swing.*;
+import Model.Board;
 
 public class Menu extends JPanel {
     public boolean started = false;
     public String filename = "src/Tetris.jpg";
+    public Board game = new Board();
     public String[] args;
 
 
@@ -20,13 +24,14 @@ public class Menu extends JPanel {
     public Menu(String[] arg) {
         args = arg;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
         mainMenu();
     }
 
     public void mainMenu() {
         removeAll();
         updateUI();
-
+      
         add(Box.createVerticalStrut(30));
 
         JLabel jlabel = new JLabel("TETRIS!");
@@ -139,14 +144,23 @@ public class Menu extends JPanel {
 
     }
 
+
+    public void startGame(){
+        System.out.println("start!");
+        game.Start();
+    }
+
     @Override
     public void paintComponent (Graphics g) {
 
         super.paintComponent(g);
         if (!started) {
             g.drawImage(new ImageIcon(filename).getImage(), 0, 0, 720, 640, this);
+
         } else {
             setBackground(Color.RED);
         }
     }
+
 }
+

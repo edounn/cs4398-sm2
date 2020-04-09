@@ -1,4 +1,7 @@
+package Model;
+
 import java.awt.image.BufferedImage;
+import java.awt.Graphics;
 
 /**
 *
@@ -19,54 +22,27 @@ public class Shape {
 	    this.board = board;
    }
 
-   public void update() {}
-
    public void render(Graphics g){}
-
-
+  /**
+   *
+   */
+  public int x;
 
   /**
    *
    */
-  public void coords;
+  public int y;
 
   /**
    *
    */
-  public void Board board;
+  public int color;
 
   /**
    *
    */
-  public void x;
+  public int collisions;
 
-  /**
-   *
-   */
-  public void y;
-
-  /**
-   *
-   */
-  public void color;
-
-  /**
-   *
-   */
-  public void collisions;
-
-  /**
-   *
-   */
-  public void Attribute1;
-
-
-  /**
-   *
-   */
-  public void Shape() {
-      // TODO implement here
-  }
 
   /**
    *
@@ -134,8 +110,8 @@ public class Shape {
   /**
    *
    */
-  public void getBlock() {
-      // TODO implement here
+  public Shape getBlock() {
+      return this;
   }
 
   /**
