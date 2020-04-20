@@ -29,7 +29,7 @@ public class ShapeTest {
     public void testShape(){
         shape = new Shape(blocks.getSubimage(0, 0, BLOCK_SIZE, BLOCK_SIZE), new int[][]{
                 {1, 1, 1, 1} // LBlock
-        }, board);
+        }, board, 1);
 
         assertEquals("Testing block shape: ", shape, shape.getBlock());
     }

@@ -49,7 +49,7 @@ public class Menu extends JPanel {
         playbutton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // create instance to play tetris
+                game.Start();
             }
         });
         add(playbutton);
