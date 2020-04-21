@@ -8,17 +8,10 @@ import Model.Board;
 import View.Menu;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 
 public class MenuTest {
     private Board game;
     private Menu menu;
-
-    @Test
-    public void testStartGame(){
-        menu = new Menu(new String[1]);
-        assertEquals("Testing before startGame(): ", false, menu.started);
-        menu.startGame();
-        assertEquals("Testing after startGame(): ", true, menu.started);
-    }
 }

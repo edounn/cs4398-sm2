@@ -42,17 +42,17 @@ public class Shape {
    *
    */
   public void update() {
-      if(collisionDetected){
-        for(int row = 0; row < coords.length; row++){
-          for(int col = 0; col < coords[row].length; col++){
-            if(coords[row][col] != 0){
-              board.getBoard()[x+row][y+col] = color;
-            }
+    if(collisionDetected){
+      for(int row = 0; row < coords.length; row++){
+        for(int col = 0; col < coords[row].length; col++){
+          if(coords[row][col] != 0){
+            board.getBoard()[x+row][y+col] = color;
           }
         }
-        checkLine();
-        board.newPiece();
       }
+      checkLine();
+      board.newPiece();
+    }
     if(!(x + deltaX + coords[0].length > 10) && !(x + deltaX < 0)) {
       for(int row = 0; row < coords.length; row++) {
         for (int col = 0; col < coords[row].length; col++) {

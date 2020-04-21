@@ -47,13 +47,6 @@ public class Board  extends JPanel implements KeyListener {
       }
     }
     shapes = new Shape[7];
-    timer = new Timer(DELAY, new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        update();
-        repaint();
-      }
-    });
 
     shapes[0] = new Shape(blocks.getSubimage(0, 0, BLOCK_SIZE, BLOCK_SIZE), new int[][]{
             {1, 1, 1, 1} // IShape
@@ -88,7 +81,15 @@ public class Board  extends JPanel implements KeyListener {
             {1, 1}   // O-Shape
     }, this, 7);
 
-    newPiece();
+    timer = new Timer(DELAY, new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        update();
+        repaint();
+      }
+    });
+
+   newPiece();
   }
 
 
@@ -105,7 +106,6 @@ public class Board  extends JPanel implements KeyListener {
 
   public void paintComponent(Graphics g){
     super.paintComponent(g);
-
     currentPiece.render(g);
 
     for(int row = 0; row < board.length; row++) {
@@ -146,7 +146,7 @@ public class Board  extends JPanel implements KeyListener {
    * Takes no parameters, returns nothing.
    */
   public void newPiece() {
-    Shape next = shapes[(int)Math.random()*shapes.length];
+     currentPiece =  shapes[(int)Math.random()*shapes.length];
 
   }
 

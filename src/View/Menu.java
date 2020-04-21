@@ -12,20 +12,22 @@ import java.io.File;
 import java.nio.Buffer;
 import javax.swing.*;
 import Model.Board;
+import sun.applet.Main;
 
 public class Menu extends JPanel {
     public boolean started = false;
     public String filename = "./Tetris.jpg";
     public Board game;
     public String[] args;
+    private gameFrame frame;
 
 
-
-    public Menu(String[] arg) {
+    public Menu(String[] arg, gameFrame jf) {
         args = arg;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         game = new Board();
         mainMenu();
+        frame = jf;
     }
 
     public void mainMenu() {
@@ -49,7 +51,7 @@ public class Menu extends JPanel {
         playbutton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                game.Start();
+                frame.start();
             }
         });
         add(playbutton);
@@ -146,9 +148,11 @@ public class Menu extends JPanel {
 
 
     public void startGame(){
-        System.out.println("start!");
         started = true;
-        game.Start();
+        game.Start();;
+        frame.add(game);
+        this.setVisible(false);
+        frame.repaint();
     }
 
     @Override
