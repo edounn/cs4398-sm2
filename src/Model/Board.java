@@ -1,11 +1,14 @@
 package Model;
 
+import Controller.BoardController;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
+
+import java.util.EventListener;
 
 /**
  *

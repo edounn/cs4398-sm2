@@ -1,5 +1,6 @@
 package View;
 
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -31,7 +32,7 @@ public class Menu extends JPanel {
     public void mainMenu() {
         removeAll();
         updateUI();
-      
+
         add(Box.createVerticalStrut(30));
 
         JLabel jlabel = new JLabel("TETRIS!");
@@ -49,7 +50,7 @@ public class Menu extends JPanel {
         playbutton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // create instance to play tetris
+                startGame();// create instance to play tetris
             }
         });
         add(playbutton);
@@ -163,4 +164,3 @@ public class Menu extends JPanel {
     }
 
 }
-
