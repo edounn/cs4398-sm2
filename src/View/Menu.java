@@ -19,15 +19,12 @@ public class Menu extends JPanel {
     public String filename = "./Tetris.jpg";
     public Board game;
     public String[] args;
-    private gameFrame frame;
 
 
-    public Menu(String[] arg, gameFrame jf) {
+    public Menu(String[] arg) {
         args = arg;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        game = new Board();
         mainMenu();
-        frame = jf;
     }
 
     public void mainMenu() {
@@ -51,7 +48,7 @@ public class Menu extends JPanel {
         playbutton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.start();
+
             }
         });
         add(playbutton);
@@ -144,15 +141,6 @@ public class Menu extends JPanel {
         });
         add(okButton);
 
-    }
-
-
-    public void startGame(){
-        started = true;
-        game.Start();;
-        frame.add(game);
-        this.setVisible(false);
-        frame.repaint();
     }
 
     @Override

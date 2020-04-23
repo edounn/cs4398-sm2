@@ -42,6 +42,10 @@ public class Shape {
    *
    */
   public void update() {
+
+    time += System.currentTimeMillis() - lastTime;
+    lastTime = System.currentTimeMillis();
+
     if(collisionDetected){
       for(int row = 0; row < coords.length; row++){
         for(int col = 0; col < coords[row].length; col++){
@@ -197,6 +201,10 @@ public class Shape {
    */
   public int getColor() {
       return color;
+  }
+
+  public int[][] getCoords() {
+    return coords;
   }
 
 }

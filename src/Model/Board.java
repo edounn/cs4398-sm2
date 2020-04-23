@@ -1,7 +1,5 @@
 package Model;
 
-import com.sun.crypto.provider.BlowfishCipher;
-
 import javax.imageio.stream.FileImageInputStream;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -25,8 +23,8 @@ public class Board  extends JPanel implements KeyListener {
   private BufferedImage blocks;
   private Shape[] shapes;
   private Shape currentPiece;
-  private boolean gameOver;
-  private boolean isPaused;
+  private boolean gameOver = false;
+  private boolean isPaused = false;
   private final int FPS = 60;
   private final int DELAY = 1000 / FPS;
 
@@ -40,12 +38,16 @@ public class Board  extends JPanel implements KeyListener {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    board = new int[BOARD_HEIGHT][BOARD_WIDTH];
-    for (int i = 0; i < BOARD_HEIGHT; i++) {
-      for (int j = 0; j < BOARD_WIDTH; j++) {
-        board[i][j] = 0;
-      }
+
+   timer = new Timer(DELAY, new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+     update();
+     repaint();
     }
+   });
+    timer.start();
+    board = new int[BOARD_HEIGHT][BOARD_WIDTH];
     shapes = new Shape[7];
 
     shapes[0] = new Shape(blocks.getSubimage(0, 0, BLOCK_SIZE, BLOCK_SIZE), new int[][]{
@@ -81,27 +83,7 @@ public class Board  extends JPanel implements KeyListener {
             {1, 1}   // O-Shape
     }, this, 7);
 
-    timer = new Timer(DELAY, new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        update();
-        repaint();
-      }
-    });
-
    newPiece();
-  }
-
-
-  /**
-   * Public function which starts the game.
-   * Takes no parameters, returns nothing.
-   */
-  public void Start() {
-    gameOver = false;
-    isPaused = false;
-
-    timer.start();
   }
 
   public void paintComponent(Graphics g){
@@ -146,8 +128,22 @@ public class Board  extends JPanel implements KeyListener {
    * Takes no parameters, returns nothing.
    */
   public void newPiece() {
-     currentPiece =  shapes[(int)Math.random()*shapes.length];
+   int index = (int)(Math.random()*shapes.length);
+   Shape newShape = new Shape(shapes[index].getBlock(), shapes[index].getCoords(),
+           this, shapes[index].getColor());
 
+   currentPiece = newShape;
+
+   for(int row = 0; row < currentPiece.getCoords().length; row++) {
+    for (int col = 0; col < currentPiece.getCoords()[row].length; col++) {
+     if (currentPiece.getCoords()[row][col] != 0) {
+
+      if (board[row][col + 3] != 0) {
+       gameOver = true;
+      }
+     }
+    }
+   }
   }
 
   @Override
@@ -174,7 +170,9 @@ public class Board  extends JPanel implements KeyListener {
   }
 
   public void update(){
+   System.out.println("update");
 		currentPiece.update();
+
 		if(gameOver)
 			timer.stop();
 	}
