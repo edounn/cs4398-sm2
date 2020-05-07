@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * A
+ * A public class which extends JPanel and implements KeyListener
  */
 public class Board  extends JPanel implements KeyListener {
 
