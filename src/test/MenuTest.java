@@ -10,7 +10,9 @@ import View.Menu;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-
+/**
+ * A JUnit test class for the Menu Class
+ */
 public class MenuTest {
     private Board game;
     private Menu menu;

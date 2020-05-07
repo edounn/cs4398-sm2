@@ -4,7 +4,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.stream.FileImageInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import java.awt.Graphics;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,10 +13,9 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import javax.swing.*;
 
 /**
- *
+ * A
  */
 public class Board  extends JPanel implements KeyListener {
 
@@ -37,7 +36,10 @@ public class Board  extends JPanel implements KeyListener {
     private final int DELAY = 1000 / FPS;
     private int score = 0;
 
-    // Default constructor. Generates necessary UI etc from assets.
+    /**
+     * Constructor
+     * Creates array of shapes and starts background music and timer
+     */
     public Board(){
 
         try {
@@ -95,7 +97,10 @@ public class Board  extends JPanel implements KeyListener {
         }, this, 7);
     }
 
-    // Draws GUI.
+    /**
+     * Overidden from JPanel paints board for game play
+     * @param g Is a Graphic representing the current board layout.
+     */
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         // Draws BG.
@@ -157,7 +162,9 @@ public class Board  extends JPanel implements KeyListener {
         }
     }
 
-    // Sets the shapes.
+    /**
+     * A public function which sets the current Tetrimo
+     */
     public void setCurrentPiece(){
         currentPiece = nextPiece;
         setNextPiece();
@@ -174,6 +181,9 @@ public class Board  extends JPanel implements KeyListener {
         }
     }
 
+    /**
+     * A public void function that gets the next piece
+     */
     public void setNextPiece(){
         int index = (int)(Math.random()*shapes.length);
         Shape newShape = new Shape(shapes[index].getBlock(), shapes[index].getCoords(),
@@ -181,7 +191,9 @@ public class Board  extends JPanel implements KeyListener {
 
     }
 
-    // These classes maintain gamestate.
+    /**
+     * A sub class which implements ActionListener to run the game.
+     */
     class gameLoop implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -190,14 +202,19 @@ public class Board  extends JPanel implements KeyListener {
         }
     }
 
+    /**
+     * A public void function responsible for starting the game
+     */
     public void startGame(){
         stopGame();
         setNextPiece();
-        setCurrentPiece();
         gameOver = false;
         loop.start();
     }
 
+    /**
+     * A public void method which stops the game state and clears the board
+     */
     public void stopGame(){
         score = 0;
 
@@ -211,24 +228,44 @@ public class Board  extends JPanel implements KeyListener {
         loop.stop();
     }
 
+    /**
+     * A public void method which handles the tick by tick movement of the game.
+     */
     public void update(){
 		currentPiece.update();
 
 		if(gameOver)
 			timer.stop();
     }
+
+    /**
+     * A public getter for gameOver state
+     * @return a boolean that represents current game state
+     */
     public boolean getGameOver() {
         return gameOver;
     }
 
+    /**
+     * A public getter for the paused game state
+     * @return a boolean that represents the current game state
+     */
     public boolean getIsPaused() {
         return isPaused;
     }
 
+    /**
+     * A public getter for the current board state
+     * @return a 2d array that represents the current layout of the game board
+     */
     public int[][] getBoard() {
         return board;
     }
 
+    /**
+     * A public getter for the block size
+     * @return an int constant which represents the size of a game piece.
+     */
     public int getBlockSize(){
         return BLOCK_SIZE;
     }
@@ -239,6 +276,10 @@ public class Board  extends JPanel implements KeyListener {
             btn.stop();
         }});
 
+    /**
+     * A public void function overridden from the KeyListener
+     * @param e a KeyEvent representing the current pressed key
+     */
     @Override
     public void keyPressed(KeyEvent e){
         if(e.getKeyCode() == KeyEvent.VK_UP)
@@ -250,8 +291,17 @@ public class Board  extends JPanel implements KeyListener {
         if(e.getKeyCode() == KeyEvent.VK_DOWN)
             currentPiece.speedUp();
     }
+
+    /**
+     * An overridden stub from KeyListener
+     * @param e a KeyEven representing the current pressed key
+     */
     @Override
     public void keyTyped (KeyEvent e) {}
+    /**
+     * An overridden stub from KeyListener
+     * @param e a KeyEven representing the current pressed key
+     */
     @Override
     public void keyReleased (KeyEvent e) {}
 }

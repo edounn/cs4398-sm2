@@ -1,18 +1,20 @@
 package View;
 
 
-import Model.Board;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.io.IOException;
 
-
+/**
+ * A public class which extends JPanel and implements MouseListener
+ */
 public class Menu extends JPanel implements MouseListener{
+    /**
+     * A constructor which sets up the default panel
+     * @param viewer A Viewer which controls the game's UI
+     */
     public Menu(Viewer viewer) {
 
         JLabel jlabel = new JLabel("TETRIS");
@@ -64,6 +66,10 @@ public class Menu extends JPanel implements MouseListener{
         add(settingsButton);
     }
 
+    /**
+     * A public void function which changes the games current theme
+     * @param viewer A Viewer which controls the games overall UI
+     */
     public void changeTheme(Viewer viewer) {
         removeAll();
         updateUI();
@@ -119,6 +125,10 @@ public class Menu extends JPanel implements MouseListener{
 
     }
 
+    /**
+     * An overridden public method which paints the menu onto the game UI
+     * @param g a Graphic which is the game's UI
+     */
     @Override
     public void paintComponent(Graphics g) {
 
@@ -126,19 +136,38 @@ public class Menu extends JPanel implements MouseListener{
         g.drawImage(new ImageIcon("src/images/background.jpg").getImage(), 0, 0, 720, 640, this);
 
     }
+
+    /**
+     * An overridden public void stub
+     * @param e A MouseEvent
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
     }
-
+    /**
+     * An overridden public void stub
+     * @param e A MouseEvent
+     */
     @Override
     public void mousePressed(MouseEvent e) {
     }
-
+    /**
+     * An overridden public void stub
+     * @param e A MouseEvent
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
     }
+    /**
+     * An overridden public void stub
+     * @param e A MouseEvent
+     */
     @Override
     public void mouseExited(MouseEvent e){}
+    /**
+     * An overridden public void stub
+     * @param e A MouseEvent
+     */
     @Override
     public void mouseEntered(MouseEvent e){}
 }

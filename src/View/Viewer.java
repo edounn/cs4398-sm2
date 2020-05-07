@@ -1,21 +1,21 @@
 package View;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import javax.swing.*;
-import javax.swing.JFrame;
 import Model.Board;
 
+import javax.swing.*;
 
+/**
+ * A public class which handles the game's UI
+ */
 public class Viewer{
 
     private JFrame viewer;
     private Board game;
     private Menu menu;
 
+    /**
+     * Default constructor for the games UI
+     */
     public Viewer() {
 
         viewer = new JFrame("Tetris Game");
@@ -31,6 +31,9 @@ public class Viewer{
         viewer.setVisible(true);
     }
 
+    /**
+     * A public void method which handles starting the game state
+     */
     public void beginGame() {
         viewer.remove(menu);
         viewer.add(game);
@@ -38,7 +41,10 @@ public class Viewer{
         viewer.revalidate();
     }
 
-
+    /**
+     * A main to run the game.
+     * @param args
+     */
     public static void main(String[] args) {
         new Viewer();
     }

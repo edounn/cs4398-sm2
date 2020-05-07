@@ -1,10 +1,10 @@
 package Model;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.Graphics;
 
 /**
-*
+* Public class which represents the Tetrimos
 */
 public class Shape {
 
@@ -25,7 +25,11 @@ public class Shape {
   private int[][] reference;
 
   /**
-   * Default constructor
+   * Default constructor for the Shape/ Tetrimo class
+   * @param block A BufferedImage of a jpeg, which is the color to use for the Tetrimo
+   * @param coords A 2d array which represents the blocks space
+   * @param board The game Board
+   * @param color An int representing the color of the Tetrimo
    */
    public Shape(BufferedImage block, int[][] coords, Board board, int color)
    {
@@ -44,7 +48,8 @@ public class Shape {
    }
 
   /**
-   *
+   * A public void method which updates the current piece's game state
+   * Detects collisions and game overs.
    */
   public void update() {
 
@@ -99,7 +104,8 @@ public class Shape {
   }
 
   /**
-   *
+   * A public void method responsible for drawing the tetrimo on the board
+   * @param g the current game graphic
    */
   public void render(Graphics g) {
     for(int row = 0; row < coords.length; row++) {
@@ -112,7 +118,7 @@ public class Shape {
   }
 
   /**
-   *
+   * A public void method to check if a line is to be cleared
    */
   public void checkLine() {
     int height = board.getBoard().length - 1;
@@ -130,7 +136,7 @@ public class Shape {
   }
 
   /**
-   *
+   * A public void method which handles rotation of the tetrimos
    */
   public void rotate() {
     if(collisionDetected) {
@@ -152,6 +158,11 @@ public class Shape {
     coords = rotatedMatrix;
   }
 
+  /**
+   * A public method which returns the transposed matrix representing a tetrimo
+   * @param coords A 2d array which represents the coordinate matrix of a tetrimo
+   * @return returns the newly transposed coordinate matrix of a tetrimo
+   */
   public int[][] getTranspose(int[][] coords) {
     int[][] newMatrix = new int[coords[0].length][coords.length];
     for(int i = 0; i < coords.length; i++) {
@@ -162,6 +173,11 @@ public class Shape {
     return newMatrix;
   }
 
+  /**
+   * A public method that returns a 2d int array representing the reversed tetrimo
+   * @param rotatedMatrix a 2d int array which represents the coordinate matrix of a tetrimo
+   * @return a 2d int array representing the reversed coordinate matrix of a tetrimo
+   */
   public int[][] getReverseMatrix(int[][] rotatedMatrix) {
     int middle = rotatedMatrix.length / 2;
 
@@ -174,44 +190,54 @@ public class Shape {
   }
 
   /**
-   *
+   * A public void method which sets deltaX
+   * @param deltaX an int representing the change in the x coordinate of a tetrimo
    */
   public void setDeltaX(int deltaX) {
       this.deltaX = deltaX;
   }
 
   /**
-   *
+   * A public void method which sets the current tetrimo speed to the normal speed
    */
   public void normalSpeed() {
       currentSpeed = normalSpeed;
   }
 
   /**
-   *
+   * a public void method which sets the current speed to the slower option
    */
   public void speedDown() {
       currentSpeed = speedDown;
   }
 
+  /**
+   * a public void method which sets the current speed the the faster option
+   */
   public void speedUp() {
     currentSpeed = speedUp;
   }
 
   /**
-   *
+   * A public method which returns BufferedImage that represents the current tetrimo
+   * @return a BufferedImage that represents the current tetrimo
    */
   public BufferedImage getBlock() {
       return block;
   }
 
   /**
-   *
+   * A public method which returns an int representing the color of the current tetrimo
+   * @return an int representing the color of the current tetrimo
    */
   public int getColor() {
       return color;
   }
 
+  /**
+   * A public method which returns a 2d int array representing the coordinate matrix of the current tetrimo
+   * @return
+   */
   public int[][] getCoords() {
     return coords;
   }

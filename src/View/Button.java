@@ -1,13 +1,13 @@
 package View;
 
+import javax.swing.*;
 import java.awt.*;
-
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import java.awt.event.MouseEvent;
-
-import javax.swing.JButton;
-
+/**
+ * A Button class which extends JButton and implements MouseListener
+ */
 public class Button extends JButton implements MouseListener {
 
     Dimension size = new Dimension(150, 75);
@@ -17,6 +17,10 @@ public class Button extends JButton implements MouseListener {
 
     String text = "";
 
+    /**
+     * A Constructor for the custom Button Class
+     * @param text A string which is the button text
+     */
     public Button(String text) {
         setVisible(true);
         setFocusable(true);
@@ -28,8 +32,10 @@ public class Button extends JButton implements MouseListener {
         addMouseListener(this);
     }
 
-
-
+    /**
+     * An overridden method which paints the button on the screen
+     * @param g A Graphic which is the current screen
+     */
     @Override
     public void paintComponent (Graphics g) {
         super.paintComponent(g);
@@ -62,8 +68,11 @@ public class Button extends JButton implements MouseListener {
     }
 
 
-
-        @Override
+    /**
+     * A public overridden method which returns the Buttons preferred size
+     * @return A Dimension which represents the preferred size of the Button
+     */
+    @Override
 
         public Dimension getPreferredSize() {
 
@@ -72,8 +81,11 @@ public class Button extends JButton implements MouseListener {
         }
 
 
-
-        @Override
+    /**
+     * A public overridden function which returns the max size of the Button
+     * @return A Dimension which represents the max size of the button
+     */
+    @Override
 
         public Dimension getMaximumSize() {
 
@@ -82,7 +94,10 @@ public class Button extends JButton implements MouseListener {
         }
 
 
-
+        /**
+         * A public overridden function which returns the min size of the Button
+         * @return A Dimension which represents the min size of the button
+         */
         @Override
 
         public Dimension getMinimumSize() {
@@ -91,63 +106,85 @@ public class Button extends JButton implements MouseListener {
 
         }
 
-        public void setButtonText (String text) {
+    /**
+     * A public void function which sets the button text
+     * @param text A string that is the desired button text
+     */
+    public void setButtonText (String text) {
 
             this.text = text;
 
         }
 
-        public String getButtonText() {
+    /**
+     * A public getter which returns the Button's text
+     * @return A string containing the Button's text
+     */
+    public String getButtonText() {
 
             return text;
 
         }
 
-        @Override
 
+        /**
+         * An overridden public function which notifies the button that the mouse is hovering
+         * @param e is a MouseEvent
+         */
+        @Override
         public void mouseEntered(MouseEvent e) {
 
             hover = true;
 
         }
 
-        @Override
-
-        public void mouseExited(MouseEvent e) {
-
-            hover = false;
-
-        }
-
-
-
-        @Override
-
-        public void mousePressed(MouseEvent e) {
-
-            click = true;
-
-        }
+    /**
+     * An overridden public function which notifies the button that the mouse is no longer hovering
+     * @param e is a MouseEvent
+     */
+    @Override
+    public void mouseExited(MouseEvent e) {
+        hover = false;
+    }
 
 
+    /**
+     * An overridden public function which notifies the button that the mouse is pressed down
+     * @param e is a MouseEvent
+     */
+    @Override
 
-        @Override
+    public void mousePressed(MouseEvent e) {
 
-        public void mouseReleased(MouseEvent e) {
+        click = true;
 
-            click = false;
-
-        }
+    }
 
 
+    /**
+     * An overridden public function which notifies the button that the mouse has been released
+     * @param e is a MouseEvent
+     */
+    @Override
 
-        @Override
+    public void mouseReleased(MouseEvent e) {
 
-        public void mouseClicked(MouseEvent e) {
+        click = false;
 
-            click = false;
+    }
 
-        }
+
+    /**
+     * An overridden public function which notifies the button that the mouse has been clicked
+     * @param e is a MouseEvent
+     */
+    @Override
+
+    public void mouseClicked(MouseEvent e) {
+
+        click = false;
+
+    }
 
 
     }
