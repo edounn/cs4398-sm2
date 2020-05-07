@@ -1,0 +1,7 @@
+/.idea/*
+/out/*/*
+/src/libs/*
+*.iml
+*.env
+.idea/workspace.xmls
+*.class
